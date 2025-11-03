@@ -2,20 +2,34 @@
 
 AuraMart is an online shopping app that allows users to explore, compare, and buy products easily from different categories — all in one place.
 
+## 🛠️ Tech Stack :
 
+🔹 Firebase Authentication – Secure login & signup management
 
-# 🚀 Features :
+🔹 Firebase Firestore – Cloud database for storing and fetching app data
+
+🔹 Firebase Storage – For uploading and managing product images
+
+🔹 BLoC (Cubit) – State management for predictable, reactive UI updates
+
+🔹 SharedPreferences – Local storage for user sessions and preferences
+
+## 🚀 Features :
 
 ✅ Login / Signup with Firebase Authentication
 
-🔐 Token-based Authentication
+🔐 Secure Authentication with Firebase Tokens
 
-🧠 Auto Login with local storage
+🧠 Auto Login with Local Storage
 
 👤 Profile View & Update
 
-🍕 Fetching and displaying product data
+🛍️ Fetching and Displaying Product Data from Firebase Firestore
 
-🏗️ Modular, scalable architecture
+🏗️ Modular, Scalable Architecture
 
-💡 Full walkthrough for Flutter beginners
+📁 Clean and Scalable Folder Structure
+
+📱 Responsive UI and Reusable Widgets
+
+💡 Perfect Walkthrough for Flutter Beginners
