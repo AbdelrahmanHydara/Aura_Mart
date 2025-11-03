@@ -45,10 +45,14 @@ lib/
 │   └── theme/
 │
 ├── features/
-│   ├── home/
-│   │   ├── cubit/
-│   │   ├── data/
-│   │   ├── screens/
-│   │   └── widgets/
+│   └── home/
+│       ├── cubit/
+│       │   ├── home_cubit.dart
+│       │   └── home_states.dart
+│       ├── data/
+│       │   ├── models/
+│       │   └── repositories/
+│       ├── screens/
+│       └── widgets/
 │
 └── main.dart
