@@ -33,3 +33,22 @@ AuraMart is an online shopping app that allows users to explore, compare, and bu
 📱 Responsive UI and Reusable Widgets
 
 💡 Perfect Walkthrough for Flutter Beginners
+
+## 📂 Project Structure :
+
+```
+lib/
+├── core/
+│   ├── constants/
+│   ├── utils/
+│   ├── widgets/
+│   └── theme/
+│
+├── features/
+│   ├── home/
+│   │   ├── cubit/
+│   │   ├── data/
+│   │   ├── screens/
+│   │   └── widgets/
+│
+└── main.dart
