@@ -1,16 +1,58 @@
-# aura_mart
+# 🛒 AuraMart
 
-A new Flutter App.
+AuraMart is an online shopping app that allows users to explore, compare, and buy products easily from different categories — all in one place.
 
-## Getting Started
+## 🛠️ Tech Stack :
 
-This project is a starting point for a Flutter application.
+🔹 Firebase Authentication – Secure login & signup management
 
-A few resources to get you started if this is your first Flutter project:
+🔹 Firebase Firestore – Cloud database for storing and fetching app data
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🔹 Firebase Storage – For uploading and managing product images
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🔹 BLoC (Cubit) – State management for predictable, reactive UI updates
+
+🔹 SharedPreferences – Local storage for user sessions and preferences
+
+## 🚀 Features :
+
+✅ Login / Signup with Firebase Authentication
+
+🔐 Secure Authentication with Firebase Tokens
+
+🧠 Auto Login with Local Storage
+
+👤 Profile View & Update
+
+🛍️ Fetching and Displaying Product Data from Firebase Firestore
+
+🏗️ Modular, Scalable Architecture
+
+📁 Clean and Scalable Folder Structure
+
+📱 Responsive UI and Reusable Widgets
+
+💡 Perfect Walkthrough for Flutter Beginners
+
+## 📂 Project Structure :
+
+```
+lib/
+├── core/
+│   ├── constants/
+│   ├── utils/
+│   ├── widgets/
+│   └── theme/
+│
+├── features/
+│   └── home/
+│       ├── cubit/
+│       │   ├── home_cubit.dart
+│       │   └── home_states.dart
+│       ├── data/
+│       │   ├── models/
+│       │   └── repositories/
+│       ├── screens/
+│       └── widgets/
+│
+└── main.dart
