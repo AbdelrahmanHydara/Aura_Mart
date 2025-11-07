@@ -1,6 +1,6 @@
-# 🛒 AuraMart
+# 🛒 ShopX
 
-AuraMart is an online shopping app that allows users to explore, compare, and buy products easily from different categories — all in one place.
+ShopX is an online shopping app that allows users to explore, compare, and buy products easily from different categories — all in one place.
 
 ## 🛠️ Tech Stack :
 
