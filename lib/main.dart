@@ -1,12 +1,14 @@
-import 'package:aura_mart/shopx.dart';
-import 'package:aura_mart/core/theme/logic/theme_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopx/core/theme/logic/theme_cubit.dart';
+import 'package:shopx/shopx.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
-      BlocProvider(
+    BlocProvider(
           create: (_) => ThemeCubit(),
           child: const ShopX(),
       ),

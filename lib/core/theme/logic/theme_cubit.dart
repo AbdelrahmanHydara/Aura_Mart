@@ -1,6 +1,6 @@
-import 'package:aura_mart/core/theme/theme_data.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shopx/core/theme/theme_data.dart';
 import 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {

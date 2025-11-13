@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-  const blackColor = Color(0xFF262626);
-const whiteColor = Color(0xFFFFFFFF);
-const goldenColor = Color(0xffcfb53b);
-const blueColor = Color(0xff3966de);
-const yellowColor = Color(0xffffee00);
-const greenColor = Color(0xff019309);
-const searchBlackColor = Colors.black26;
+const Color blackColor = Color(0xFF262626);
+const Color whiteColor = Color(0xFFFFFFFF);
+const Color goldenColor = Color(0xffcfb53b);
+const Color blueColor = Color(0xff3966de);
+const Color yellowColor = Color(0xffffee00);
+const Color greenColor = Color(0xff019309);
+const Color searchBlackColor = Colors.black26;
 const primaryLinearColor = [blackColor, blackColor];
+
 
 
 @immutable
@@ -62,24 +63,6 @@ class AppColors extends ThemeExtension<AppColors> {
   static const dark = AppColors(
     primaryColor: whiteColor,
     secondaryColor: blackColor,
-    searchColor: searchBlackColor,
-  );
-
-  static const pink = AppColors(
-    primaryColor: blackColor,
-    secondaryColor: Color(0xffffcad4),
-    searchColor: searchBlackColor,
-  );
-
-  static const blue = AppColors(
-    primaryColor: Color(0xff005f73),
-    secondaryColor: Color(0xffa9def9),
-    searchColor: searchBlackColor,
-  );
-
-  static const purple = AppColors(
-    primaryColor: Color(0xff7b1fa2),
-    secondaryColor: Color(0xffe1bee7),
     searchColor: searchBlackColor,
   );
 }

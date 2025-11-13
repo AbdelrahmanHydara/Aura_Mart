@@ -1,8 +1,6 @@
-name: aura_mart
+name: shopx
 description: "ShopX App."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -31,6 +29,16 @@ dependencies:
   supabase_flutter: ^2.10.3
   # Customize Flutter's default white native splash screen with background color and splash image. Supports dark mode, full screen, and more.
   flutter_native_splash: ^2.4.7
+  # Package for easy use of images that are automatically cacheable and have a beautiful on the fly (but it can be configured) shimmer effect while loading.
+  fancy_shimmer_image: ^2.0.3
+  lucide_icons: ^0.257.0
+
+
+
+
+
+
+
 
 
 
@@ -48,13 +56,14 @@ flutter_launcher_icons:
 
   flutter_lints: ^5.0.0
 
-
 flutter:
 
   uses-material-design: true
 
   assets:
     - assets/images/
+    - assets/images/categories/
+    - assets/images/banners/
 
   # example:
   # fonts:
