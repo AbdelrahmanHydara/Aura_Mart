@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/search_body_screen.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -6,12 +7,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          'Search Screen',
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-      ),
+      body: SearchBodyScreen(),
     );
   }
 }
