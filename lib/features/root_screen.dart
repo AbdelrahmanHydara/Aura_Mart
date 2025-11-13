@@ -74,8 +74,16 @@ class _RootScreenState extends State<RootScreen> {
                   activeIcon: Icons.manage_search,
                   index: 1,
                 ),
-                _buildCartItem(context, index: 2),
-                _buildProfileItem(context, index: 3),
+                _buildCartItem(context,
+                    index: 2,
+                ),
+                _buildNavItem(
+                  context,
+                  label: "Profile",
+                  icon: CupertinoIcons.person_alt_circle,
+                  activeIcon: CupertinoIcons.person_alt_circle_fill,
+                  index: 3,
+                ),
               ],
             ),
           ),
@@ -84,7 +92,6 @@ class _RootScreenState extends State<RootScreen> {
     );
   }
 
-
   BottomNavigationBarItem _buildNavItem(
       BuildContext context, {
         required String label,
@@ -92,7 +99,6 @@ class _RootScreenState extends State<RootScreen> {
         required IconData activeIcon,
         required int index,
       }) {
-    final appColors = Theme.of(context).extension<AppColors>()!;
     final bool isSelected = _selectedIndex == index;
 
     return BottomNavigationBarItem(
@@ -107,7 +113,6 @@ class _RootScreenState extends State<RootScreen> {
     );
   }
 
-
   BottomNavigationBarItem _buildCartItem(BuildContext context,
       {required int index}) {
     final appColors = Theme.of(context).extension<AppColors>()!;
@@ -115,49 +120,24 @@ class _RootScreenState extends State<RootScreen> {
 
     return BottomNavigationBarItem(
       label: "Cart",
-      icon: Badge(
-        label: Text(
-            "5",
-            style: TextStyle(
-                color: appColors.secondaryColor,
-                fontSize: 11,
-            ),
-        ),
-        backgroundColor: Colors.red,
-        offset: const Offset(7, -7),
-        child: Icon(
-          isSelected
-              ? CupertinoIcons.cart_fill
-              : CupertinoIcons.cart,
-          key: ValueKey(isSelected),
-        ),
-      ),
-    );
-  }
-
-  BottomNavigationBarItem _buildProfileItem(BuildContext context,
-      {required int index}) {
-    final appColors = Theme.of(context).extension<AppColors>()!;
-    final bool isSelected = _selectedIndex == index;
-
-    return BottomNavigationBarItem(
-      label: "Profile",
-      icon: AnimatedContainer(
+      icon: AnimatedSwitcher(
         duration: const Duration(milliseconds: 300),
-        padding: const EdgeInsets.all(4),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: isSelected
-                ? appColors.primaryColor
-                : Colors.transparent,
-            width: 2,
+        child: Badge(
+          label: Text(
+              "5",
+              style: TextStyle(
+                  color: appColors.secondaryColor,
+                  fontSize: 11,
+              ),
           ),
-        ),
-        child: const CircleAvatar(
-          radius: 13,
-          backgroundImage: NetworkImage(
-              "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"),
+          backgroundColor: Colors.red,
+          offset: const Offset(8, -8),
+          child: Icon(
+            isSelected
+                ? CupertinoIcons.cart_fill
+                : CupertinoIcons.cart,
+            key: ValueKey(isSelected),
+          ),
         ),
       ),
     );
