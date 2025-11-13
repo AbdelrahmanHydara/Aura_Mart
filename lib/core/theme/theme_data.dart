@@ -27,17 +27,27 @@ class AppTheme {
       ),
     ),
     colorScheme: ColorScheme.fromSeed(seedColor: whiteColor),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      elevation: 10,
+      backgroundColor: Colors.grey.shade300,
       selectedLabelStyle: TextStyle(
-        fontSize: 13,
+        fontSize: 14,
         fontWeight: FontWeight.w600,
-        fontFamily: 'IBM Plex Sans',
       ),
       unselectedLabelStyle: TextStyle(
-        fontSize: 13,
-        fontWeight: FontWeight.w600,
-        fontFamily: 'IBM Plex Sans',
+        fontSize: 12,
       ),
+      selectedIconTheme: IconThemeData(
+        color: Colors.green.shade600,
+        size: 22,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: Colors.black54,
+        size: 18,
+      ),
+      selectedItemColor: Colors.green.shade600,
+      unselectedItemColor: Colors.black54,
+      showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
     ),
     // textTheme: GoogleFonts.montserratTextTheme(),
@@ -62,19 +72,16 @@ class AppTheme {
     ),
     bottomSheetTheme: const BottomSheetThemeData(surfaceTintColor: blackColor),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      type: BottomNavigationBarType.fixed,
       selectedLabelStyle: TextStyle(
-          fontSize: 13,
-          fontWeight: FontWeight.w600,
-          fontFamily: 'IBM Plex Sans',
-          color: Colors.white
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
       ),
       unselectedLabelStyle: TextStyle(
-          fontSize: 13,
-          fontWeight: FontWeight.w600,
-          fontFamily: 'IBM Plex Sans',
-          color: Colors.white
+        fontSize: 11,
+        fontWeight: FontWeight.w600,
       ),
+      elevation: 0,
+      type: BottomNavigationBarType.fixed,
     ),
     // textTheme: GoogleFonts.montserratTextTheme(),
     primaryColor: Colors.white,
