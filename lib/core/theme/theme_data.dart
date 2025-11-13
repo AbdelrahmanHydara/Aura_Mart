@@ -10,7 +10,8 @@ class AppTheme {
     extensions: const <ThemeExtension<AppColors>>[
       AppColors.light,
     ],
-    useMaterial3: false,
+    splashColor: Colors.grey.shade400,
+    highlightColor: Colors.grey.shade300,
     appBarTheme: const AppBarTheme(
       elevation: 0,
       titleTextStyle: TextStyle(color: blackColor),
@@ -31,7 +32,7 @@ class AppTheme {
       elevation: 10,
       backgroundColor: Colors.grey.shade300,
       selectedLabelStyle: TextStyle(
-        fontSize: 14,
+        fontSize: 13,
         fontWeight: FontWeight.w600,
       ),
       unselectedLabelStyle: TextStyle(
@@ -39,7 +40,7 @@ class AppTheme {
       ),
       selectedIconTheme: IconThemeData(
         color: Colors.green.shade600,
-        size: 22,
+        size: 20,
       ),
       unselectedIconTheme: IconThemeData(
         color: Colors.black54,
@@ -49,8 +50,8 @@ class AppTheme {
       unselectedItemColor: Colors.black54,
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
+
     ),
-    // textTheme: GoogleFonts.montserratTextTheme(),
     primaryColor: whiteColor,
     scaffoldBackgroundColor: whiteColor,
   );
@@ -60,6 +61,8 @@ class AppTheme {
     extensions:  const <ThemeExtension<AppColors>>[
       AppColors.dark,
     ],
+    splashColor: Colors.grey.shade400,
+    highlightColor: Colors.grey.shade300,
     primaryTextTheme: const TextTheme(
       bodyLarge: TextStyle(color: Colors.white),
     ),
@@ -71,19 +74,29 @@ class AppTheme {
       shadowColor: whiteColor,
     ),
     bottomSheetTheme: const BottomSheetThemeData(surfaceTintColor: blackColor),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      elevation: 10,
+      backgroundColor: Colors.black54,
       selectedLabelStyle: TextStyle(
-        fontSize: 12,
+        fontSize: 13,
         fontWeight: FontWeight.w600,
       ),
       unselectedLabelStyle: TextStyle(
-        fontSize: 11,
-        fontWeight: FontWeight.w600,
+        fontSize: 12,
       ),
-      elevation: 0,
+      selectedIconTheme: IconThemeData(
+        color: whiteColor,
+        size: 20,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: Colors.grey.shade400,
+        size: 18,
+      ),
+      selectedItemColor: whiteColor,
+      unselectedItemColor: Colors.grey.shade400,
+      showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
     ),
-    // textTheme: GoogleFonts.montserratTextTheme(),
     primaryColor: Colors.white,
     scaffoldBackgroundColor: const Color(0xFF262626),
     appBarTheme: const AppBarTheme(
