@@ -31,7 +31,10 @@ dependencies:
   flutter_native_splash: ^2.4.7
   # Package for easy use of images that are automatically cacheable and have a beautiful on the fly (but it can be configured) shimmer effect while loading.
   fancy_shimmer_image: ^2.0.3
-  lucide_icons: ^0.257.0
+  # Converts already built widgets into skeleton loaders with no extra effort.
+  skeletonizer: ^2.1.0+1
+  # A Flutter plugin to use the Firebase Core API, which enables connecting to multiple Firebase apps.
+  firebase_core: ^4.2.1
 
 
 
