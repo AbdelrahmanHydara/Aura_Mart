@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "995864520077",
+    "project_id": "r-store-6ee75",
+    "storage_bucket": "r-store-6ee75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995864520077:android:f5658dda9748193261c9c4",
+        "android_client_info": {
+          "package_name": "com.example.aura_mart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995864520077-bp5nf4b1e7ftas8ld53mre87llafnolm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX8kHDYZXM1db73XuTt_owdTod-TT9RE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995864520077-bp5nf4b1e7ftas8ld53mre87llafnolm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "995864520077-cj3inge2ji2th05ato2ogditq0cvl3ui.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rStore"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995864520077:android:30b3a4e05526a96c61c9c4",
+        "android_client_info": {
+          "package_name": "com.example.r_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995864520077-23kev7p2o094bae5oe61qiais7qtgf9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.r_store",
+            "certificate_hash": "83e97206ae4bd3a9e64791816882ebb83f57e898"
+          }
+        },
+        {
+          "client_id": "995864520077-bp5nf4b1e7ftas8ld53mre87llafnolm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX8kHDYZXM1db73XuTt_owdTod-TT9RE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995864520077-bp5nf4b1e7ftas8ld53mre87llafnolm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "995864520077-cj3inge2ji2th05ato2ogditq0cvl3ui.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rStore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
