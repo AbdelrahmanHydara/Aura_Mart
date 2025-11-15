@@ -92,6 +92,24 @@ class TextWidgets {
     );
   }
 
+  static Widget subHeading1(
+      String text, {
+        Color? color,
+        double? fontSize,
+        TextAlign? textAlign,
+        FontWeight? fontWeight,
+        int? maxLines,
+      }) {
+    return CustomText(
+      text: text,
+      color: color,
+      fontSize: fontSize ?? 18,
+      fontWeight: fontWeight ?? FontWeight.w700,
+      textAlign: textAlign,
+      maxLines: maxLines,
+    );
+  }
+
   static Widget bodyText(
       String text, {
         Color? color,
