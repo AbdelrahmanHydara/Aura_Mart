@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shopx/core/theme/app_colors.dart';
 import 'custom_container.dart';
 import 'custom_text.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -38,12 +37,12 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: CustomContainer(
-        width: width!.w,
-        height: height!.h,
+        width: width,
+        height: height,
         borderColor: borderColor,
         radius: borderRadius ?? 9,
         padding: padding ?? const EdgeInsets.symmetric(horizontal: 20,vertical: 7),
-        color: backgroundColor ?? appColors.primaryColor,
+        color: backgroundColor,
         child: Row(
           mainAxisAlignment: arrow == true ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,7 +51,7 @@ class CustomButton extends StatelessWidget {
               const SizedBox.shrink(),
             ],
 
-            TextWidgets.subHeading(text , fontWeight: fontWeight,fontSize: fontSize ?? 15,color: textColor),
+            TextWidgets.subHeading(text , fontWeight: fontWeight,fontSize: fontSize ?? 16,color: textColor),
 
             if(arrow)...[
               Icon(Icons.arrow_forward,color: arrowColor ?? appColors.secondaryColor),
