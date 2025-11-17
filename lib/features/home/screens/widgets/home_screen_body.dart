@@ -3,13 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopx/core/helpers/spacing.dart';
 import 'package:shopx/core/theme/app_colors.dart';
 import 'package:shopx/features/home/screens/widgets/home_banner_slider.dart';
-import 'package:shopx/features/home/screens/widgets/brands_card.dart';
 import 'package:shopx/features/home/screens/widgets/category_rounded.dart';
 import 'package:shopx/features/home/screens/widgets/list_name.dart';
 import 'package:shopx/features/home/screens/widgets/product_card.dart';
 
-class HomeBodyScreen extends StatelessWidget {
-  const HomeBodyScreen({super.key});
+class HomeScreenBody extends StatelessWidget {
+  const HomeScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -4,8 +4,8 @@ import 'package:shopx/core/components/custom_button.dart';
 import 'package:shopx/core/helpers/extensions.dart';
 import 'package:shopx/core/routing/routes.dart';
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+class RegisterButton extends StatelessWidget {
+  const RegisterButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,11 @@ class LoginButton extends StatelessWidget {
       child: Card(
         elevation: 5,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.r),
-          ),
+          borderRadius: BorderRadius.circular(16.r),
+        ),
         child: CustomButton(
           onPressed: () => context.pushReplacementNamed(Routes.rootScreen),
-          text: "Login",
+          text: "Register",
           textColor: Colors.white,
           borderRadius: 16.r,
           backgroundColor: Colors.teal.withAlpha(200),
