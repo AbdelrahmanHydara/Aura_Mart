@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopx/core/components/custom_text.dart';
 import 'package:shopx/core/helpers/spacing.dart';
 import 'login_button.dart';
 import 'login_text_form_field.dart';
@@ -13,8 +15,35 @@ class LoginScreenBody extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         children: [
           const LoginTextFormField(),
-          verticalSpace(28),
+          verticalSpace(4),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () {  },
+              child: TextWidgets.bodyText1(
+                "Forgot Password ?",
+                color: Colors.blue,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
           const LoginButton(),
+          verticalSpace(20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextWidgets.subHeading1(
+                "Don't have an account ?",
+              ),
+              horizontalSpace(6),
+              TextWidgets.subHeading1(
+                "Register",
+                color: Colors.blue,
+              ),
+
+            ],
+          ),
         ],
       ),
     );

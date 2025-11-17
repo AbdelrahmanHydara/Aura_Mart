@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopx/features/home/screens/widgets/home_appbar.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'widgets/home_body_screen.dart';
+import 'widgets/home_screen_body.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Skeletonizer(
         enabled: _enabled,
         enableSwitchAnimation: true,
-          child: const HomeBodyScreen(),
+          child: const HomeScreenBody(),
       ),
     );
   }

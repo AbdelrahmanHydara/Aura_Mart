@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopx/features/auth/login/login_screen.dart';
+import 'package:shopx/features/auth/register/screens/register_screen.dart';
 import 'package:shopx/features/auth/start_auth/screens/start_auth_screen.dart';
 import 'package:shopx/features/home/screens/home_screen.dart';
 import 'package:shopx/features/root_screen.dart';
@@ -29,6 +30,10 @@ class AppRouter {
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => const LoginScreen(),
+        );
+      case Routes.registerScreen:
+        return MaterialPageRoute(
+          builder: (_) => const RegisterScreen(),
         );
     }
     return null;
