@@ -21,6 +21,7 @@ class HomeBodyScreen extends StatelessWidget {
           const HomeBannerSlider(),
           verticalSpace(30),
           const CategoryRoundedWidget(),
+          verticalSpace(16),
           verticalSpace(35),
           const ListName(
             text: "Recommended For You",
@@ -46,13 +47,13 @@ class HomeBodyScreen extends StatelessWidget {
               ),
             ),
           ),
-          verticalSpace(40),
+          verticalSpace(30),
           Container(
             color: greenColor.withAlpha(450),
             child: Column(
               children: [
-                const BrandsCard(),
-                verticalSpace(5),
+                Image.asset("assets/images/banners/banner4.gif"),
+                verticalSpace(10),
                 GridView.builder(
                   shrinkWrap: true,
                   padding: EdgeInsets.symmetric(

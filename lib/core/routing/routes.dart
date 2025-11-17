@@ -6,7 +6,7 @@ class Routes {
 
   static const String searchScreen = "/searchScreen";
 
-  static const String onBoardingScreen = "/onBoardingScreen";
+  static const String startAuthScreen = "/startAuthScreen";
 
   static const String loginScreen = "/loginScreen";
 
