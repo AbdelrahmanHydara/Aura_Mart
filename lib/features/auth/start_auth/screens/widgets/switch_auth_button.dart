@@ -21,7 +21,6 @@ class SwitchAuthButton extends StatelessWidget {
         Expanded(
           child: Card(
             elevation: 8,
-
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.r),
             ),

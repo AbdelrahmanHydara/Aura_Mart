@@ -1,63 +1,54 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shopx/core/components/custom_text_form_field.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopx/core/helpers/app_validators.dart';
 import 'package:shopx/core/helpers/spacing.dart';
+import 'package:shopx/features/auth/register/cubit/register_cubit.dart';
+import 'package:shopx/features/auth/start_auth/screens/widgets/custom_auth_text_field.dart';
 
-class RegisterTextFormField extends StatefulWidget {
+class RegisterTextFormField extends StatelessWidget {
   const RegisterTextFormField({super.key});
 
   @override
-  State<RegisterTextFormField> createState() => _RegisterTextFormFieldState();
-}
-
-class _RegisterTextFormFieldState extends State<RegisterTextFormField> {
-
-  final formKey = GlobalKey<FormState>();
-  bool isPasswordVisible = false;
-
-  @override
   Widget build(BuildContext context) {
+    final cubit = context.read<RegisterCubit>();
     return Form(
-      key: formKey,
+      key: cubit.formKey,
+      autovalidateMode: cubit.autoValidateMode,
       child: Column(
         children: [
           verticalSpace(20),
-          CustomTextFormField(
-            hintText:"Please enter your fall name",
+          CustomAuthTextField(
+            hintText: "Please enter your fall name",
             labelText: "Name",
-            prefixIcon: Icon(
-              CupertinoIcons.person,
-            ),
-            fillColor: Colors.grey.withAlpha(20),
+            onSaved: (value) => cubit.name = value!,
+            prefixIcon: cubit.prefixIconName,
             keyboardType: TextInputType.name,
-            validator: (value) => AppValidators.name(value),
+            validator: AppValidators.nameValidator,
           ),
           verticalSpace(20),
-          CustomTextFormField(
-            hintText:"Please enter your email",
+          CustomAuthTextField(
+            hintText: "Please enter your email",
             labelText: "Email",
-            prefixIcon: Icon(
-              CupertinoIcons.mail,
-            ),
-            fillColor: Colors.grey.withAlpha(20),
+            onSaved: (value) => cubit.email = value!,
+            prefixIcon: cubit.prefixIconEmail,
             keyboardType: TextInputType.emailAddress,
-            validator: (value) => AppValidators.name(value),
+            validator: AppValidators.emailValidator,
           ),
           verticalSpace(20),
-          CustomTextFormField(
-            hintText: "Please enter your password",
-            labelText: "Password",
-            obscureText: true,
-            prefixIcon: Icon(
-              CupertinoIcons.lock,
-            ),
-            suffixIcon: Icon(
-              isPasswordVisible ? CupertinoIcons.eye : CupertinoIcons.eye_slash,
-            ),
-            fillColor: Colors.grey.withAlpha(20),
-            keyboardType: TextInputType.visiblePassword,
-            validator: (value) => AppValidators.password(value),
+          BlocBuilder<RegisterCubit, RegisterState>(
+            builder: (context, state) {
+              return CustomAuthTextField(
+                hintText: "Please enter your password",
+                labelText: "Password",
+                onSaved: (value) => cubit.password = value!,
+                obscureText: cubit.isPasswordVisible,
+                prefixIcon: cubit.prefixIconPassword,
+                suffixIcon: cubit.suffixIconPassword,
+                suffixPressed: () => cubit.changePasswordVisibility(),
+                keyboardType: TextInputType.visiblePassword,
+                validator: AppValidators.passwordValidator,
+              );
+            },
           ),
         ],
       ),
