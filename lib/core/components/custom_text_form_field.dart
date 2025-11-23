@@ -6,16 +6,17 @@ class CustomTextFormField extends StatelessWidget {
 
   final EdgeInsetsGeometry? contentPadding;
   final String hintText, labelText;
-  final Widget? suffixIcon, prefixIcon;
+  final IconData? suffixIcon, prefixIcon;
   final InputBorder? focusedBorder, enabledBorder;
   final bool? obscureText;
-  final TextStyle? hintStyle, style;
-  final Color? fillColor;
+  final TextStyle? hintStyle, labelStyle, style;
+  final Color? textColor, fillColor, cursorColor, hintColor, labelColor, focusedColor, enabledColor;
   final TextInputType keyboardType;
   final TextEditingController? controller;
   final Function(String?) validator;
   final int? maxLines;
   final void Function(String?)? onSaved;
+  final void Function()? suffixPressed;
 
   const CustomTextFormField({
     super.key,
@@ -31,6 +32,14 @@ class CustomTextFormField extends StatelessWidget {
     this.onSaved,
     this.controller,
     this.prefixIcon,
+    this.suffixPressed,
+    this.textColor,
+    this.cursorColor,
+    this.hintColor,
+    this.labelColor,
+    this.labelStyle,
+    this.focusedColor,
+    this.enabledColor,
     required this.hintText,
     required this.validator,
     required this.keyboardType,
@@ -45,41 +54,46 @@ class CustomTextFormField extends StatelessWidget {
       controller: controller,
       maxLines: maxLines ?? 1,
       style: style ?? TextStyle(
-        color: appColors.primaryColor,
+        color: textColor ?? appColors.primaryColor,
         fontSize: 14.sp,
         fontWeight: FontWeight.w600,
       ),
       obscureText: obscureText ?? false,
       validator: (value) => validator(value),
       keyboardType: keyboardType,
-      cursorColor: appColors.primaryColor,
+      cursorColor: cursorColor ?? appColors.primaryColor,
       decoration: InputDecoration(
         isDense: true,
         filled: true,
         fillColor: fillColor ?? appColors.primaryColor.withAlpha(50),
         hintText: hintText,
         labelText: labelText,
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
+        hintStyle: hintStyle ?? TextStyle(
+          color: hintColor ?? appColors.primaryColor.withAlpha(100),
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w500,
+        ),
+        labelStyle: labelStyle ?? TextStyle(
+          color: labelColor ?? appColors.primaryColor.withAlpha(100),
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600,
+        ),
+        prefixIcon: Icon(prefixIcon),
+        suffixIcon: IconButton(
+          icon: Icon(
+            suffixIcon,
+          ),
+          onPressed: suffixPressed ,
+        ),
         contentPadding: contentPadding ?? EdgeInsets.symmetric(
           horizontal: 10.w,
           vertical: 10.h,
         ),
-        hintStyle: hintStyle ?? TextStyle(
-          color: appColors.primaryColor.withAlpha(100),
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w500,
-        ),
-        labelStyle: TextStyle(
-            color: appColors.primaryColor.withAlpha(100),
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w600,
-          ),
         focusedBorder: focusedBorder ?? _buildOutlineInputBorder(
-          color: appColors.primaryColor.withAlpha(100),
+          color: focusedColor ?? appColors.primaryColor.withAlpha(100),
         ),
         enabledBorder: enabledBorder ?? _buildOutlineInputBorder(
-          color: appColors.primaryColor.withAlpha(100),
+          color: enabledColor ?? appColors.primaryColor.withAlpha(100),
         ),
         errorBorder: _buildOutlineInputBorder(),
         focusedErrorBorder: _buildOutlineInputBorder(),

@@ -29,11 +29,11 @@ class LoginScreenBody extends StatelessWidget {
             ),
           ),
           const LoginButton(),
-          verticalSpace(20),
+          verticalSpace(18),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextWidgets.subHeading1(
+              TextWidgets.subHeading2(
                 "Don't have an account ?",
               ),
               horizontalSpace(6),

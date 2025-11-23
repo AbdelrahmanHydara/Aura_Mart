@@ -35,12 +35,14 @@ dependencies:
   skeletonizer: ^2.1.0+1
   # A Flutter plugin to use the Firebase Core API, which enables connecting to multiple Firebase apps.
   firebase_core: ^4.2.1
-
-
-
-
-
-
+  firebase_auth: ^6.1.2
+  cloud_firestore: ^6.1.0
+  google_sign_in: ^6.0.0
+  flutter_facebook_auth: ^6.0.0
+  modal_progress_hud_nsn: ^0.5.1
+  fluttertoast: ^9.0.0
+  get_it: ^9.0.5
+  dartz: ^0.10.1
 
 
 

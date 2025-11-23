@@ -1,33 +1,49 @@
 class AppValidators {
-  static String? requiredField(String? value, {String fieldName = "هذا الحقل"}) {
-    if (value == null || value.trim().isEmpty) {
-      return "$fieldName مطلوب";
-    }
-    return null;
-  }
 
-  static String? name(String? value) {
-    if (value == null || value.trim().isEmpty) {
-      return "الاسم مطلوب";
-    }
-    if (!RegExp(r'^[ء-يa-zA-Z\s]+$').hasMatch(value)) {
-      return "الاسم يجب أن يحتوي على حروف فقط";
-    }
-    if (value.trim().length < 3) {
-      return "الاسم قصير جدًا";
-    }
-    return null;
-  }
-
-  static String? password(String? value) {
+  static String? emailValidator(String? value) {
     if (value == null || value.isEmpty) {
-      return "كلمة المرور مطلوبة";
+      return 'Email is required.';
+    }
+    final RegExp emailRegExp = RegExp(
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+    );
+
+    if (!emailRegExp.hasMatch(value)) {
+      return 'Please enter a valid email address.';
+    }
+    return null;
+  }
+
+  static String? nameValidator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Name is required.';
+    }
+    if (value.length < 3) {
+      return 'Name must be at least 3 characters long.';
+    }
+    final RegExp nameRegExp = RegExp(r'^[a-zA-Z\s]+$');
+    if (!nameRegExp.hasMatch(value)) {
+      return 'Name must only contain letters and spaces.';
+    }
+    return null;
+  }
+
+  static String? passwordValidator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Password is required.';
     }
     if (value.length < 8) {
-      return "كلمة المرور يجب أن تكون 8 حروف على الأقل";
+      return 'Password must be at least 8 characters long.';
     }
-    if (!RegExp(r'^(?=.*[A-Z])(?=.*\d)').hasMatch(value)) {
-      return "كلمة المرور يجب أن تحتوي على حرف كبير ورقم";
+
+    if (!value.contains(RegExp(r'[A-Z]'))) {
+      return 'Password must contain at least one uppercase letter.';
+    }
+    if (!value.contains(RegExp(r'[0-9]'))) {
+      return 'Password must contain at least one number.';
+    }
+    if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+      return 'Password must contain at least one special character.';
     }
     return null;
   }
