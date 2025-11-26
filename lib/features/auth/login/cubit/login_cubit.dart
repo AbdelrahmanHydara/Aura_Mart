@@ -27,12 +27,37 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
+  Future<void> loginUserWithGoogle() async {
+    emit(LoginLoadingSocial());
+    try {
+      final result = await authRepo.loginUserWithGoogle();
+      result.fold(
+            (failure) => emit(LoginError(errorMessage: failure.message)),
+            (userEntity) => emit(LoginSuccess(userEntity: userEntity)),
+      );
+    } on Exception catch (_) {
+      emit(LoginError(errorMessage: 'A fatal error stopped the process.'));
+    }
+  }
+
+  Future<void> loginUserWithFacebook() async {
+    emit(LoginLoadingSocial());
+    try {
+      final result = await authRepo.loginUserWithFacebook();
+      result.fold(
+            (failure) => emit(LoginError(errorMessage: failure.message)),
+            (userEntity) => emit(LoginSuccess(userEntity: userEntity)),
+      );
+    } on Exception catch (_) {
+      emit(LoginError(errorMessage: 'A fatal error stopped the process.'));
+    }
+  }
+
   IconData prefixIconName = CupertinoIcons.person;
   IconData prefixIconEmail = CupertinoIcons.mail;
   IconData prefixIconPassword = CupertinoIcons.lock;
   IconData suffixIconPassword = CupertinoIcons.eye_slash;
   bool isPasswordVisible = true;
-
   void changePasswordVisibility() {
     isPasswordVisible = !isPasswordVisible;
     suffixIconPassword =
@@ -41,7 +66,6 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
-
   void changeAutoValidateMode() {
     autoValidateMode = AutovalidateMode.always;
     emit(LoginChangeAutoValidateModeState());

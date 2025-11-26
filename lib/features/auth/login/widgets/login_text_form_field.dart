@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopx/core/helpers/app_validators.dart';
 import 'package:shopx/core/helpers/spacing.dart';
 import 'package:shopx/features/auth/login/cubit/login_cubit.dart';
-import 'package:shopx/features/auth/start_auth/screens/widgets/custom_auth_text_field.dart';
+import 'package:shopx/features/auth/widgets/custom_auth_text_field.dart';
 
 class LoginTextFormField extends StatelessWidget {
   const LoginTextFormField({super.key});

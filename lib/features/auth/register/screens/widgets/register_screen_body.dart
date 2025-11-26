@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopx/core/components/custom_text.dart';
 import 'package:shopx/core/helpers/spacing.dart';
+import 'package:shopx/features/auth/register/screens/widgets/login_button_on_register_screen.dart';
+import 'package:shopx/features/auth/widgets/heading_auth.dart';
 import 'register_button.dart';
 import 'register_text_form_field.dart';
 
@@ -9,28 +10,19 @@ class RegisterScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
-      children: [
-        const RegisterTextFormField(),
-        verticalSpace(28),
-        const RegisterButton(),
-        verticalSpace(18),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextWidgets.subHeading2(
-              "Already have an account ?",
-            ),
-            horizontalSpace(6),
-            TextWidgets.subHeading1(
-              "Login",
-              color: Colors.blue,
-            ),
-
-          ],
-        ),
-      ],
+      child: Column(
+        children: [
+          verticalSpace(70),
+          const HeadingAuth(),
+          const RegisterTextFormField(),
+          verticalSpace(28),
+          const RegisterButton(),
+          verticalSpace(20),
+          const LoginButtonOnRegisterScreen(),
+        ],
+      ),
     );
   }
 }
