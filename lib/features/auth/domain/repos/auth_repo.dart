@@ -17,11 +17,21 @@ abstract class AuthRepo {
     required String password,
   });
 
-  // Create User with Google
-  Future<Either<Failure, UserEntity>> createUserWithGoogle();
+  // Login User with Google
+  Future<Either<Failure, UserEntity>> loginUserWithGoogle();
 
-  // Create User with Facebook
-  Future<Either<Failure, UserEntity>> createUserWithFacebook();
+  // Login User with Facebook
+  Future<Either<Failure, UserEntity>> loginUserWithFacebook();
+
+  // Add User to Database
+  Future addUserToDatabase({
+    required UserEntity user,
+  });
+
+  // Get User from Database
+  Future<UserEntity> getUserFromDatabase({
+    required String uid,
+  });
 
   // Logout User
   Future<Either<Failure, Unit>> logoutUser();

@@ -4,7 +4,7 @@ import 'package:shopx/features/auth/domain/entities/user_entity.dart';
 class UserModel extends UserEntity  {
 
   UserModel({
-    required super.id,
+    required super.uId,
     required super.email,
     required super.name,
     required super.image,
@@ -13,11 +13,21 @@ class UserModel extends UserEntity  {
 
   factory UserModel.fromFirebaseUser(User user) {
     return UserModel(
-      id: user.uid,
+      uId: user.uid,
       email: user.email ?? '',
       name: user.displayName ?? '',
       image: user.photoURL ?? '',
       phoneNumber: user.phoneNumber ?? '',
+    );
+  }
+
+  factory UserModel.formJson(Map<String, dynamic> json) {
+    return UserModel(
+      uId: json['uId'],
+      email: json['email'],
+      name: json['name'],
+      image: json['image'],
+      phoneNumber: json['phoneNumber'],
     );
   }
 }

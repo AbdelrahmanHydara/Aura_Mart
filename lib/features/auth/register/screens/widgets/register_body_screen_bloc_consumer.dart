@@ -14,7 +14,7 @@ class RegisterBodyScreenBlocConsumer extends StatelessWidget {
     return BlocConsumer<RegisterCubit, RegisterState>(
       listener: (context, state) {
         if (state is RegisterSuccess) {
-          showAppToast(message: "Registered Successfully", bgColor: Colors.teal);
+          showAppToast(message: "Registered Successfully", bgColor: Colors.green.shade500);
           context.pushNamed(Routes.loginScreen);
         }
         if (state is RegisterError) {

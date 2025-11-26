@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopx/core/components/custom_button.dart';
+import 'package:shopx/core/theme/app_colors.dart';
 import 'package:shopx/features/auth/register/cubit/register_cubit.dart';
 
 class RegisterButton extends StatelessWidget {
@@ -15,27 +16,23 @@ class RegisterButton extends StatelessWidget {
         final bool isLoading = state is RegisterLoading;
         return SizedBox(
           width: double.infinity,
-          child: Card(
-            elevation: 5,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.r),
-            ),
-            child: CustomButton(
-              onPressed: isLoading
-                  ? null
-                  : () {
-                if (cubit.formKey.currentState!.validate()) {
-                  cubit.formKey.currentState!.save();
-                  cubit.createUserWithEmailAndPassword();
-                } else {
-                  cubit.changeAutoValidateMode();
-                }
-              },
-              text: isLoading ? "Loading...!" : "Register",
-              textColor: Colors.white,
-              borderRadius: 16.r,
-              backgroundColor: isLoading ? Colors.grey : Colors.teal.withAlpha(200),
-            ),
+          child: CustomButton(
+            onPressed: isLoading
+                ? null
+                : () {
+                    if (cubit.formKey.currentState!.validate()) {
+                      cubit.formKey.currentState!.save();
+                      cubit.createUserWithEmailAndPassword();
+                    } else {
+                      cubit.changeAutoValidateMode();
+                    }
+                  },
+            text: isLoading ? "Loading...!" : "Register",
+            textColor: whiteColor,
+            borderRadius: 16.r,
+            backgroundColor: isLoading
+                ? Colors.green.shade200
+                : Colors.green.shade500,
           ),
         );
       },

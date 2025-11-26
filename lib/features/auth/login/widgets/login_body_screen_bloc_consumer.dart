@@ -14,7 +14,7 @@ class LoginBodyScreenBlocConsumer extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          showAppToast(message: "Login Successfully", bgColor: Colors.teal);
+          showAppToast(message: "Login Successfully", bgColor: Colors.green.shade500);
           context.pushReplacementNamed(Routes.rootScreen);
         }
         if (state is LoginError) {

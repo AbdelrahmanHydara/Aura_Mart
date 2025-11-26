@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopx/core/components/custom_text_form_field.dart';
+import 'package:shopx/core/theme/app_colors.dart';
 
 class CustomAuthTextField extends StatelessWidget {
   const CustomAuthTextField({
@@ -27,13 +28,13 @@ class CustomAuthTextField extends StatelessWidget {
     return CustomTextFormField(
       hintText: hintText,
       labelText: labelText,
-      textColor: Colors.black,
-      hintColor: Colors.grey.shade500,
-      labelColor: Colors.grey.shade500,
-      cursorColor: Colors.teal,
-      fillColor: Colors.grey.withAlpha(50),
-      enabledColor: Colors.grey.withAlpha(100),
-      focusedColor: Colors.teal,
+      textColor: blackColor,
+      hintColor: blackColor,
+      labelColor: blackColor,
+      cursorColor: blackColor,
+      fillColor: whiteColor,
+      enabledColor: whiteColor70,
+      focusedColor: greenColor,
       onSaved: onSaved,
       keyboardType: keyboardType,
       validator: validator,

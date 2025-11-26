@@ -1,53 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopx/core/components/custom_text.dart';
 import 'package:shopx/core/helpers/spacing.dart';
+import 'package:shopx/features/auth/widgets/heading_auth.dart';
+import 'forgot_password.dart';
 import 'login_button.dart';
+import 'login_social_button.dart';
 import 'login_text_form_field.dart';
+import 'register_button_on_login_screen.dart';
 
 class LoginScreenBody extends StatelessWidget {
   const LoginScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        physics: const BouncingScrollPhysics(),
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Column(
         children: [
+          verticalSpace(70),
+          const HeadingAuth(),
           const LoginTextFormField(),
           verticalSpace(4),
-          Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () {  },
-              child: TextWidgets.bodyText1(
-                "Forgot Password ?",
-                color: Colors.blue,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
+          const ForgotPassword(),
           const LoginButton(),
-          verticalSpace(18),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextWidgets.subHeading2(
-                "Don't have an account ?",
-              ),
-              horizontalSpace(6),
-              TextWidgets.subHeading1(
-                "Register",
-                color: Colors.blue,
-              ),
-
-            ],
-          ),
+          verticalSpace(20),
+          const RegisterButtonOnLoginScreen(),
+          verticalSpace(20),
+          const LoginSocialButton(),
         ],
       ),
     );
   }
 }
-
 

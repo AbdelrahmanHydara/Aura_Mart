@@ -7,6 +7,8 @@ final class LoginInitial extends LoginState {}
 
 final class LoginLoading extends LoginState {}
 
+final class LoginLoadingSocial extends LoginState {}
+
 final class LoginSuccess extends LoginState {
   final UserEntity userEntity;
 

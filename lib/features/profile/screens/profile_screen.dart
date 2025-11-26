@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           children: [
             CustomButton(
-              onPressed: () => context.pushNamed(Routes.startAuthScreen),
+              onPressed: () => context.pushNamed(Routes.loginScreen),
                 text: "Go to Login",
                 backgroundColor: Colors.blue,
             ),

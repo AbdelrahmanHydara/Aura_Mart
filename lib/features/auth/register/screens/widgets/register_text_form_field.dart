@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopx/core/helpers/app_validators.dart';
 import 'package:shopx/core/helpers/spacing.dart';
 import 'package:shopx/features/auth/register/cubit/register_cubit.dart';
-import 'package:shopx/features/auth/start_auth/screens/widgets/custom_auth_text_field.dart';
+import 'package:shopx/features/auth/widgets/custom_auth_text_field.dart';
 
 class RegisterTextFormField extends StatelessWidget {
   const RegisterTextFormField({super.key});
@@ -18,7 +18,7 @@ class RegisterTextFormField extends StatelessWidget {
         children: [
           verticalSpace(20),
           CustomAuthTextField(
-            hintText: "Please enter your fall name",
+            hintText: "Please enter your full name",
             labelText: "Name",
             onSaved: (value) => cubit.name = value!,
             prefixIcon: cubit.prefixIconName,

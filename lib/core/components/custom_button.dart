@@ -51,9 +51,10 @@ class CustomButton extends StatelessWidget {
               const SizedBox.shrink(),
             ],
             TextWidgets.subHeading(
-                text ,
-                fontWeight: fontWeight,fontSize: fontSize ?? 16,
-                color: textColor,
+              text ,
+              fontWeight: fontWeight,
+              fontSize: fontSize ?? 16,
+              color: textColor,
             ),
             if(arrow)...[
               Icon(

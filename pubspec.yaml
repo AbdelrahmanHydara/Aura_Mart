@@ -39,7 +39,6 @@ dependencies:
   cloud_firestore: ^6.1.0
   google_sign_in: ^6.0.0
   flutter_facebook_auth: ^6.0.0
-  modal_progress_hud_nsn: ^0.5.1
   fluttertoast: ^9.0.0
   get_it: ^9.0.5
   dartz: ^0.10.1
@@ -69,6 +68,7 @@ flutter:
     - assets/images/
     - assets/images/categories/
     - assets/images/banners/
+    - assets/images/logos/
 
   # example:
   # fonts:
